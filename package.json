@@ -1,13 +1,30 @@
 {
-  "name": "with-yarn-workspaces",
+  "name": "sedative",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn --cwd packages/web-app dev",
-    "build": "yarn --cwd packages/web-app build",
-    "start": "yarn --cwd packages/web-app start"
+    "client": "yarn workspace client",
+    "bottles": "yarn workspace @kensie/bottles",
+    "candy": "yarn workspace @kensie/candy",
+    "services": "yarn workspace services",
+    "dev": "yarn client:dev & yarn bottles:dev",
+    "client:dev": "yarn --cwd packages/client dev",
+    "client:build": "yarn --cwd packages/client build",
+    "client:start": "yarn --cwd packages/client start",
+    "bottles:dev": "yarn --cwd packages/bottles dev",
+    "bottles:build": "yarn --cwd packages/bottles build",
+    "bottles:start": "yarn --cwd packages/bottles start",
+    "candy:dev": "yarn --cwd packages/candy dev",
+    "candy:build": "yarn --cwd packages/candy build",
+    "candy:start": "yarn --cwd packages/candy start",
+    "services:dev": "yarn --cwd packages/services dev",
+    "services:build": "yarn --cwd packages/services build",
+    "services:start": "yarn --cwd packages/services start"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
 }

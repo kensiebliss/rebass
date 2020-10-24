@@ -1,0 +1,21 @@
+{
+  "scope": "kensiebliss",
+
+  "env": {
+    "GRAPHCMS_DEV_AUTH_TOKEN": "@graphcms_dev_auth_token",
+    "GRAPHCMS_PROD_AUTH_TOKEN": "@graphcms_prod_auth_token",
+    "GRAPHCMS_API_ENDPOINT": "@graphcms_api_endpoint"
+  },
+
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "continue": true,
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      }
+    }
+  ]
+}
