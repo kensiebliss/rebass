@@ -1,14 +1,15 @@
-import Button from "@atlaskit/button"
 import { useAuth } from "../hooks/useAuth"
+import { PresetDetails } from "../comps/PresetDetails"
 
 export default function Home() {
   const stuff = useAuth()
+  console.log(stuff)
 
   return (
     <div>
-      <h1>Welcome</h1>
-      <a href='/api/login'>Login</a>
-      <Button appearance='primary'>Click Here</Button>
+      <div style={{ padding: "48px 24px" }}>
+        <PresetDetails />
+      </div>
     </div>
   )
 }

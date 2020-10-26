@@ -1,5 +1,3 @@
-import Button from "@atlaskit/button"
-
 export default function Callback() {
   return (
     <div>

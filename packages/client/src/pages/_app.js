@@ -1,23 +1,38 @@
 import "isomorphic-fetch"
-import "@atlaskit/css-reset/dist/bundle.css"
-import { Reset } from "@atlaskit/theme"
-import { StateProvider } from "../cms/providers"
 import { Auth0Provider } from "@auth0/auth0-react"
+
+import { BaseStyles } from "@primer/components"
+import { StateProvider } from "../cms/providers"
 import { AppFrame } from "../comps/AppFrame"
+import { PROVIDER_PROPS } from "../consts/auth0"
+import * as React from "react"
+
+class MyErrorBoundary extends React.Component {
+  componentDidCatch(foo) {
+    // logic
+    console.log({ foo })
+  }
+
+  render() {
+    return this.props.children
+  }
+}
 
 export default function App({ Component, pageProps }) {
   return (
-    <Auth0Provider
-      domain={process.env.NEXT_PUBLIC_AUTH0_DOMAIN}
-      clientId={process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID}
-      redirectUri={"http://localhost:3000/auth/callback"}
-    >
+    <Wrapper>
+      <Component {...pageProps} />
+    </Wrapper>
+  )
+}
+
+const Wrapper = (props) => {
+  return (
+    <Auth0Provider {...PROVIDER_PROPS}>
       <StateProvider>
-        <Reset>
-          <AppFrame>
-            <Component {...pageProps} />
-          </AppFrame>
-        </Reset>
+        <BaseStyles>
+          <AppFrame>{props.children}</AppFrame>
+        </BaseStyles>
       </StateProvider>
     </Auth0Provider>
   )

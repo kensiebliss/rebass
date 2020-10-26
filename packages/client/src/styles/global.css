@@ -1,0 +1,81 @@
+button {
+  padding: 0 16px;
+  color: var(--colors-brandBlack);
+  background: transparent;
+  height: 40px;
+  min-height: 40px;
+  display: inline-flex;
+  border-radius: 4px;
+}
+
+button[data-intent="primary"] {
+  background: var(--colors-brandBlack);
+  color: var(--colors-white);
+}
+
+button[data-intent="primary"]:hover {
+  background: var(--colors-grayscale10);
+  color: var(--colors-white);
+}
+
+button[data-intent="danger"] {
+  background: var(--colors-danger);
+  color: var(--colors-white);
+}
+
+button[data-intent="danger"]:hover {
+  background: var(--colors-dangerDark);
+  color: var(--colors-white);
+}
+
+button button-text {
+  font-size: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: "Inter";
+}
+
+rebass-button {
+  padding: 0 16px;
+  color: var(--colors-brandBlack);
+  background: transparent;
+  height: 40px;
+  min-height: 40px;
+  display: inline-flex;
+  border-radius: 4px;
+}
+
+rebass-button[data-intent="primary"] {
+  background: var(--colors-brandBlack);
+  color: var(--colors-white);
+}
+
+rebass-button[data-intent="primary"]:hover {
+  background: var(--colors-grayscale10);
+  color: var(--colors-white);
+}
+
+rebass-button[data-intent="danger"] {
+  background: var(--colors-danger);
+  color: var(--colors-white);
+}
+
+rebass-button[data-intent="danger"]:hover {
+  background: var(--colors-dangerDark);
+  color: var(--colors-white);
+}
+
+rebass-button rebass-button-text {
+  font-size: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  line-height: 100%;
+  font-weight: 600;
+  font-family: "Inter";
+}
